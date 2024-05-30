@@ -1,6 +1,9 @@
 @use '../util/functions' as func;
 
 // 700px, 900px, 1440px
+// This is called a sass-map and is a tool for collecting key value pairs,
+// very useful for things like media queries where you want to collect the
+// sizes for different screens
 $breakpoints-up: (
   'medium': func.em(700),
   'large': func.em(900),
@@ -8,6 +11,8 @@ $breakpoints-up: (
 );
 
 // 699,98px, 899.98px, 1439.98px
+// Good to have 0.02px in difference between min and max width because that prevents
+// from weird/not smooth shifts on the last pixel between for example mobile and tablet versions
 $breakpoints-down: (
   'small': func.em(699.98),
   'medium': func.em(899.98),
