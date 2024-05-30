@@ -33,6 +33,14 @@
   }
 
   &__widget {
-    background-color: hsl(300, 98%, 23%);
+    padding: util.rem(16);
+
+    &.green {
+      background-color: hsl(120, 93%, 17%);
+    }
+
+    &.magenta {
+      background-color: hsl(300, 98%, 23%);
+    }
   }
 }
