@@ -16,4 +16,23 @@ body {
   font-family: util.$font;
   background-color: var(--background-color);
   color: var(--text-color);
+  margin-block-end: 50vh; //Temporary, remove after website is completed
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: hsl(0, 0%, 100%);
+    padding: 0.5rem;
+    border: 1px solid;
+  }
 }
