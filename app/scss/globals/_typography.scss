@@ -9,11 +9,29 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(util.rem(28), util.rem(16) + 2vw, util.rem(48));
+  font-size: util.rem(42);
+  // this above is called a fall back font size, just in case a browser doesnt support the clamp function below
+  // this css rule is overwritten but the clamp below if/when the browser supports this rule because it is placed
+  // below and the rules that comes after is prioritized
+  font-size: clamp(util.rem(40), 1.77rem + 3.64vw, util.rem(72));
+  // the clamp function is a super useful function to create fluidly responsive font using only one line
+  // of code without having to use media queries. The clamp function take three parameters:
+  // 1. The smallest size for the font: util.rem(40)
+  // 2. The most preferred size that is used if it is applyable: 1.77rem + 3.64vw. (Its basically how
+  // fast the font size changes as your viewport changes) We use vw(viewport) here to make the fontsize
+  // grow responsively from size util.rem(40) up to util.rem(72)
+  // 3. The biggest size that are allowed for the font to become: util.rem(72)
+
+  //Here is a page where we can calculate this: https://royalfig.github.io/fluid-typography-calculator/
 }
 
 h2 {
-  font-size: clamp(util.rem(22), util.rem(14) + 1.5vw, util.rem(36));
+  font-size: util.rem(36);
+  font-size: clamp(util.rem(36), 1.9rem + 1.45vw, util.rem(48));
+}
+
+h3 {
+  font-size: util.rem(24);
 }
 
 p {
