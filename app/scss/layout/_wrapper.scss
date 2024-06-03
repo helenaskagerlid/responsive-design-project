@@ -1,8 +1,8 @@
-@use '../util/' as util;
+@use '../util/' as u;
 
 .wrapper {
   //  this is a helper class that will we can use several times to center our content with the properties below
-  width: min(100% - util.rem(48), util.rem(1200));
+  width: min(100% - u.rem(48), u.rem(1200));
   //   width: min() is a css funnction contains of two different parameters and it is used to set to the smallest
   //   css rule compared to its parents width. So in this case the element with class wrapper will be either
   //   100% - 48px of the screen size OR 1200px wide, it will choose the one which is smallest.
@@ -10,4 +10,9 @@
   //   and get out of porportion big on x-large screens.
   margin-inline: auto;
   //   margin-inline only effect the margin on left and right side.
+  padding-block: 60px;
+
+  @include u.breakpoint(large) {
+    padding-block: 80px;
+  }
 }
