@@ -14,6 +14,7 @@ $breakpoints-up: (
 // Good to have 0.02px in difference between min and max width because that prevents
 // from weird/not smooth shifts on the last pixel between for example mobile and tablet versions
 $breakpoints-down: (
+  'xsmall': func.em(452.98),
   'small': func.em(699.98),
   'medium': func.em(899.98),
   'large': func.em(1439.98),
