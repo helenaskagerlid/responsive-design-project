@@ -12,7 +12,7 @@ h1 {
   // this above is called a fall back font size, just in case a browser doesnt support the clamp function below
   // this css rule is overwritten but the clamp below if/when the browser supports this rule because it is placed
   // below and the rules that comes after is prioritized
-  font-size: clamp(u.rem(40), 1.77rem + 3.64vw, u.rem(72));
+  font-size: clamp(u.rem(40), 1.77rem + 3.58vw, u.rem(72));
   // the clamp function is a super useful function to create fluidly responsive font using only one line
   // of code without having to use media queries. The clamp function take three parameters:
   // 1. The smallest size for the font: util.rem(40)
@@ -36,6 +36,24 @@ h2 {
 h3 {
   font-size: u.rem(24);
   line-height: 1;
+  margin-block-end: u.rem(10);
+
+  //when doing like this below, &.classname below an element tag this will result in
+  // only targeting the h3 elements that also have this classname. this way different
+  //elements can have the same helper-class name but have different css styling
+  //like the p tags below this
+  &.large {
+    font-size: u.rem(36);
+    font-size: clamp(u.rem(36), 2.02rem + 0.97vw, u.rem(44));
+
+    span {
+      display: block;
+      margin-block-end: u.rem(10);
+      font-size: u.rem(20);
+      font-size: clamp(u.rem(20), 1.14rem + 0.48vw, u.rem(24));
+      text-transform: uppercase;
+    }
+  }
 }
 
 p {
@@ -59,4 +77,8 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
+}
+
+a {
+  color: var(--text-link);
 }
