@@ -16,3 +16,28 @@
     padding-block: 80px;
   }
 }
+
+.fb-wrapper {
+  display: grid;
+  grid-template-columns:
+    [fb-start] 1fr [content-start] min(100% - u.rem(48), u.rem(1200))
+    [content-end] 1fr [fb-end];
+  //this is an intuitive way you can name the lines in your grid so it
+  //get more self explanitory from where the coulmns should end and start as
+  //you can see below
+
+  //to write > * as below targets the direct children to .fb-wrapper,
+  //which are both .fb-wrapper__full and .fb-wrapper__content
+  > * {
+    grid-row: 1 / 2;
+  }
+
+  &__full {
+    grid-column: fb-start / fb-end;
+    align-self: end;
+  }
+
+  &__content {
+    grid-column: content-start / content-end;
+  }
+}
