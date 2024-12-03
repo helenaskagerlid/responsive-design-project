@@ -34,3 +34,5 @@ Throughout the project, I learned to solve common web design challenges, such as
     Developer tools: Debugging and refining styles with Firefox Developer Tools.
 
 ## Deployment
+
+The final website is live on Netlify, showcasing everything from accessible navigation to responsive layouts and animations. 
